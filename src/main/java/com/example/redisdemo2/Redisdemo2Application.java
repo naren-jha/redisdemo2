@@ -1,5 +1,6 @@
 package com.example.redisdemo2;
 
+import com.example.redisdemo2.applications.leaderboard.LeaderboardService;
 import com.example.redisdemo2.service.*;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +33,9 @@ public class Redisdemo2Application {
 
 	@Autowired
 	private ZSetOperationService zSetOperationService;
+
+	@Autowired
+	private LeaderboardService leaderboardService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Redisdemo2Application.class, args);
@@ -150,5 +154,36 @@ public class Redisdemo2Application {
 		}
 //		career: 10.0
 //		search: 100.0
+
+
+
+		// === Leaderboard example using sorted set===
+		String leaderboardName = "leagues2022";
+		leaderboardService.addScore(leaderboardName, "chirkut", 5000);
+		leaderboardService.addScore(leaderboardName, "carry", 1000);
+		leaderboardService.addScore(leaderboardName, "jack", 100);
+		leaderboardService.addScore(leaderboardName, "dorthy", 300);
+		leaderboardService.addScore(leaderboardName, "minty", 200);
+		leaderboardService.addScore(leaderboardName, "monu", 500);
+		leaderboardService.addScore(leaderboardName, "kaju", 4000);
+		leaderboardService.addScore(leaderboardName, "emli", 2000);
+		leaderboardService.addScore(leaderboardName, "katie", 1500);
+		leaderboardService.addScore(leaderboardName, "grandi", 2200);
+		Set<ZSetOperations.TypedTuple<Object>> playerAndScores = leaderboardService.getAllPlayerAndScores(leaderboardName);
+		for (ZSetOperations.TypedTuple<Object> tuple : playerAndScores) {
+			System.out.println(tuple.getValue() + ": " + tuple.getScore());
+		}
+		/*
+		jack: 100.0
+		minty: 200.0
+		dorthy: 300.0
+		monu: 500.0
+		carry: 1000.0
+		katie: 1500.0
+		emli: 2000.0
+		grandi: 2200.0
+		kaju: 4000.0
+		chirkut: 5000.0
+		 */
 	}
 }
