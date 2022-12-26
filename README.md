@@ -17,3 +17,5 @@
 * [Leaderboard using redis sorted set](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/applications/leaderboard/LeaderboardService.java)
 * Message queue
 
+## Data
+<img width="1514" alt="image" src="https://user-images.githubusercontent.com/58611230/209585829-55bb7811-8b10-4442-98e8-9b3bd6e31902.png">
