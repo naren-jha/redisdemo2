@@ -1,6 +1,6 @@
 # redisdemo2
 
-## [concepts](https://github.com/njha-collab/JavaCodeSnippets/blob/main/RedisTemplate.md)
+## [Concepts](https://github.com/njha-collab/JavaCodeSnippets/blob/main/RedisTemplate.md)
 
 ## Operations:
 * [ValueOperationService.java](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/service/ValueOperationService.java)
