@@ -33,7 +33,7 @@ public class LeaderboardService {
         return redisTemplate.opsForZSet().rangeWithScores(leaderboardName, 0, -1);
     }
 
-    public Double getUserScore(String leaderboardName, String player) {
+    public Double getPlayerScore(String leaderboardName, String player) {
         return redisTemplate.opsForZSet().score(leaderboardName, player);
     }
 

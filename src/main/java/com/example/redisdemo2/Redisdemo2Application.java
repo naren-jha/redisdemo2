@@ -185,5 +185,11 @@ public class Redisdemo2Application {
 		kaju: 4000.0
 		chirkut: 5000.0
 		 */
+
+		Long rank = leaderboardService.getRank(leaderboardName, "jack");
+		log.info(rank.toString()); // 9
+
+		Double score = leaderboardService.getPlayerScore(leaderboardName, "grandi");
+		log.info(score.toString()); // 2200.0
 	}
 }
