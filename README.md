@@ -13,5 +13,7 @@
 
 
 ## Applications:
+* Caching
 * [Leaderboard using redis sorted set](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/applications/leaderboard/LeaderboardService.java)
+* Message queue
 
