@@ -1,5 +1,8 @@
 # redisdemo2
 
+## [concepts](https://github.com/njha-collab/JavaCodeSnippets/blob/main/RedisTemplate.md)
+
+## Operations:
 * [ValueOperationService.java](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/service/ValueOperationService.java)
 * [HashOperationService.java](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/service/HashOperationService.java)
 * [ListOperationService.java](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/service/ListOperationService.java)
@@ -7,4 +10,7 @@
 * [ZSetOperationService.java](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/service/ZSetOperationService.java)
 * [executions](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/Redisdemo2Application.java)
 
-### [concepts](https://github.com/njha-collab/JavaCodeSnippets/blob/main/RedisTemplate.md)
+
+## Applications:
+* [Leaderboard using redis sorted set](https://github.com/njha-collab/redisdemo2/blob/master/src/main/java/com/example/redisdemo2/applications/leaderboard/LeaderboardService.java)
+
