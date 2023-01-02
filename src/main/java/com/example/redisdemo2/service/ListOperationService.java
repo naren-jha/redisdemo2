@@ -32,4 +32,8 @@ public class ListOperationService {
         redisTemplate.opsForList().remove(key, count, value);
     }
 
+    public void trim(String key, long start, long end) {
+        redisTemplate.opsForList().trim(key, start, end);
+    }
+
 }

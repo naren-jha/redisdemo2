@@ -31,4 +31,8 @@ public class HashOperationService {
         redisTemplate.opsForHash().delete(key, fields);
     }
 
+    public void incrHashField(String key, String field, long delta) {
+        redisTemplate.opsForHash().increment(key, field, delta);
+    }
+
 }

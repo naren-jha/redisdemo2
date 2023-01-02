@@ -158,7 +158,7 @@ public class Redisdemo2Application {
 
 
 		// === Leaderboard example using sorted set===
-		String leaderboardName = "leagues2022";
+		String leaderboardName = "leagues:2022";
 		leaderboardService.addScore(leaderboardName, "chirkut", 5000);
 		leaderboardService.addScore(leaderboardName, "carry", 1000);
 		leaderboardService.addScore(leaderboardName, "jack", 100);

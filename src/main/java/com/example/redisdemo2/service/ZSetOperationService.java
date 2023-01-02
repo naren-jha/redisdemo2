@@ -5,6 +5,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 /*
@@ -41,6 +42,14 @@ public class ZSetOperationService {
 
     public void removeFromZSet(String key, Object... values) {
         redisTemplate.opsForZSet().remove(key, values);
+    }
+
+    public void removeFromZSet(String key, long start, long end) {
+        redisTemplate.opsForZSet().removeRange(key, start, end);
+    }
+
+    public void intersectZSets(String key, List<String> otherSetKeys, String destKey) {
+        redisTemplate.opsForZSet().intersectAndStore(key, otherSetKeys, destKey);
     }
 
 }

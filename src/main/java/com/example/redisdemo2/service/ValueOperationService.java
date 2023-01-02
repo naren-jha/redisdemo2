@@ -43,4 +43,54 @@ public class ValueOperationService {
         redisTemplate.opsForValue().set(key, value, ttlInSecs, TimeUnit.SECONDS);
     }
 
+    /**
+     * increments value of the given key by 1.
+     * if the key doesn't exist, it will first initialize with key=0 and then increment to 1
+     * if the key has a non-long value, it will first initialize with key=0 and then increment to 1
+     * @param key
+     */
+    public void incr(String key) {
+        redisTemplate.opsForValue().increment(key);
+    }
+
+    /**
+     * increments value of the given key by given delta.
+     * if the key doesn't exist, it will first initialize with key=0 and then increment by delta
+     * if the key has a non-long value, it will first initialize with key=0 and then increment by delta
+     * @param key
+     * @param delta
+     */
+    public void incrBy(String key, long delta) {
+        redisTemplate.opsForValue().increment(key, delta);
+    }
+
+    /**
+     * decrements value of the given key by 1.
+     * if the key doesn't exist, it will first initialize with key=0 and then decrement by -1
+     * if the key has a non-long value, it will first initialize with key=0 and then decrement to -1
+     * @param key
+     */
+    public void decr(String key) {
+        redisTemplate.opsForValue().decrement(key);
+    }
+
+    /**
+     * decrements value of the given key by given delta.
+     * if the key doesn't exist, it will first initialize with key=0 and then decrement by delta
+     * if the key has a non-long value, it will first initialize with key=0 and then decrement by delta
+     * @param key
+     * @param delta
+     */
+    public void decrBy(String key, long delta) {
+        redisTemplate.opsForValue().decrement(key, delta);
+    }
+
+    /**
+     * sets expiry time for a key
+     * @param key
+     */
+    public void setTtl(String key) {
+        redisTemplate.expire(key, 20, TimeUnit.SECONDS);
+    }
+
 }
